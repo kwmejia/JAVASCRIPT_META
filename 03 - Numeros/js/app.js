@@ -132,3 +132,7 @@ console.log(Math.floor(Math.random() * (30 - 10 + 1 ) + 10 ));
 
 resultado = (20 + 30) * 2;
 console.log(resultado);
+
+console.log(Math.sign(Number.MIN_VALUE))
+
+console.log(Math.sin(Math.PI));
