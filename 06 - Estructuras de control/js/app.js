@@ -70,6 +70,7 @@ for (let iterador of automoviles) {
 
 //do while
 let saldo = 10000;
+let continuar = true;
 do {
   const opcion = prompt(`*** Bienvenido al cajero automatico***
         1. Consultar saldo
@@ -94,8 +95,10 @@ do {
       saldo -= Number(cantidadRetiro);
       alert(saldo);
     }
+  } else if (opcion == "4") {
+    continuar = false;
   }
-} while (opcion != "4");
+} while (continuar);
 
 //While
 let entrada = prompt("Ingrese un número:");
