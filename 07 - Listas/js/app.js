@@ -103,9 +103,120 @@ const hayMayoresEdad = coders.some((estudiante) => estudiante.edad >= 18);
 console.log(hayMayoresEdad);
 
 //Sort - Ordena una lista
-const ordenados = coders.sort((a, b) => a.nombre.localeCompare(b.nombre));
+const ordenados = coders.sort(
+  (a, b) => a.nombre.toLowerCase() <= b.nombre.toLowerCase() && -1
+);
 console.log(ordenados);
 
 //Every - Todos tienen que cumplir una codición
-
 console.log(coders.every((coder) => coder.edad >= 18));
+
+const productos = [
+  {
+    id: Date.now() + 1,
+    nombre: "Celular",
+    categoria: "tecnologia",
+    cantidad: 5,
+    precio: 50000000,
+  },
+  {
+    id: Date.now() + 2,
+    nombre: "Arroz",
+    categoria: "comida",
+    cantidad: 5,
+    precio: 2300,
+  },
+  {
+    id: Date.now() + 3,
+    nombre: "Medias",
+    categoria: "ropa",
+    cantidad: 5,
+    precio: 25000,
+  },
+  {
+    id: Date.now() + 4,
+    nombre: "Tablet",
+    categoria: "tecnologia",
+    cantidad: 5,
+    precio: 1500000,
+  },
+  {
+    id: Date.now() + 5,
+    nombre: "Pizza",
+    categoria: "comida",
+    cantidad: 5,
+    precio: 8000,
+  },
+  {
+    id: Date.now() + 6,
+    nombre: "Laptop",
+    categoria: "tecnologia",
+    cantidad: 5,
+    precio: 7000000,
+  },
+  {
+    id: Date.now() + 7,
+    nombre: "Chaqueta",
+    categoria: "ropa",
+    cantidad: 5,
+    precio: 500000,
+  },
+  {
+    id: Date.now() + 8,
+    nombre: "audifonos",
+    categoria: "tecnologia",
+    cantidad: 5,
+    precio: 70000,
+  },
+  {
+    id: Date.now() + 9,
+    nombre: "Reloj",
+    categoria: "tecnologia",
+    cantidad: 5,
+    precio: 900000,
+  },
+  {
+    id: Date.now() + 10,
+    nombre: "Pasta",
+    categoria: "comida",
+    cantidad: 5,
+    precio: 600000,
+  },
+  {
+    id: Date.now() + 11,
+    nombre: "Camisa",
+    categoria: "ropa",
+    cantidad: 5,
+    precio: 20000,
+  },
+];
+
+console.log(productos);
+
+//Filtrar entre 500.000 y 1.000.000 mostrar en consola
+
+let rango = prompt("Ingresa el rango de precios a filtrar, separados por coma");
+
+rango = rango.split(",");
+
+if (isNaN(Number(rango[0])) || isNaN(Number(rango[1]))) {
+  alert("Los valores ingresados no son correctos");
+} else {
+  console.log(rango[0], rango[1]);
+  let buscarPrecio = productos.filter(
+    (producto) =>
+      producto.precio >= Number(rango[0]) && producto.precio <= Number(rango[1])
+  );
+  console.log(buscarPrecio);
+
+  let productosMostrar = "";
+
+  buscarPrecio.forEach((producto) => {
+    productosMostrar += `Nombre: ${producto.nombre}, Precio: ${producto.precio}, categoria: ${producto.categoria} \n`;
+  });
+
+  alert(`
+   PRODUCTOS EN ESTA RANGO DE PRECIO
+   ${productosMostrar}
+  `);
+}
