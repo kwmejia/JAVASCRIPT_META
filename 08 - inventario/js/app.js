@@ -38,6 +38,8 @@ function main() {
         modificarPorNombre();
         break;
       case "4":
+        buscarNombre()
+
         break;
       case "5":
         break;
@@ -51,6 +53,32 @@ function main() {
         mostrarMensaje();
     }
   } while (controladorWhile);
+}
+
+function buscarNombre() {
+  listarProductos();
+  let nombreProducto = prompt("Ingresa el nombre del producto");
+
+  const coincidencias = listaDeProductos.filter((producto) => producto.nombre.toLowerCase() === nombreProducto.toLowerCase());
+
+  let listarCoincidencia = "";
+
+  coincidencias.forEach((producto, index) => {
+    const { nombre, precio, cantidad, marca, categoria } = producto;
+
+    //Format unit cost
+    const precioFormat = precio.toLocaleString("en-US", {
+      currency: "USD",
+      style: "currency",
+    });
+
+    listarCoincidencia += `
+    ${index + 1
+      }. --Nombre: ${nombre} Precio: ${precioFormat} Cantidad: ${cantidad} Marca: ${marca} Categoria: ${categoria}
+    
+    `;
+  });
+  mostrarMensaje(listarCoincidencia);
 }
 
 function modificarPorNombre() {
