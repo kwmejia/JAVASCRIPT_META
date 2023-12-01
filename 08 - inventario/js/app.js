@@ -16,6 +16,7 @@ function main() {
     2. Eliminar producto
     2.1 Eliminar producto por indice
     3. Modificar producto
+    3.1 Modificar por nombre
     4. Buscar por nombre
     5. Filtrar por precio
     6. Crear un reporte de inventario - Ordenado
@@ -31,6 +32,10 @@ function main() {
         eliminarProductoPorIndice();
         break;
       case "3":
+        modificarProducto();
+        break;
+      case "3.1":
+        modificarPorNombre();
         break;
       case "4":
         break;
@@ -46,6 +51,63 @@ function main() {
         mostrarMensaje();
     }
   } while (controladorWhile);
+}
+
+function modificarPorNombre() {
+  let nombreModificar = prompt("Ingrese el nombre del producto que quiere modificar");
+
+  if (!listaDeProductos.some((producto) => producto.nombre == nombreModificar)) {
+    mostrarMensaje("El nombre del producto ingresado no existe en la lista de productos");
+    return;
+  }
+
+  const indexModificar = listaDeProductos.findIndex((producto) => producto.nombre.toLowerCase() == nombreModificar.toLowerCase());
+
+  nombre = prompt("Ingrese el nuevo nombre del producto: ");
+  categoria = prompt("Ingrese la nueva categoria del producto: ");
+  precio = Number(prompt("Ingrese el nuevo precio del producto: "));
+  cantidad = Number(prompt("Ingrese la nueva cantidad del producto: "));
+  marca = prompt("Ingrese la nueva marca del producto: ");
+
+  listaDeProductos[indexModificar]["nombre"] = nombre;
+  listaDeProductos[indexModificar]["categoria"] = categoria;
+  listaDeProductos[indexModificar]["precio"] = precio;
+  listaDeProductos[indexModificar]["cantidad"] = cantidad;
+  listaDeProductos[indexModificar]["marca"] = marca;
+
+  mostrarMensaje("El producto se modifico correctamente.");
+}
+
+
+function modificarProducto() {
+  listarProductos()
+
+  let indiceModificar = Number(prompt("Ingrese el indice del producto a modificar"))
+  indiceModificar--;
+
+  if (indiceModificar < 0 || indiceModificar > listaDeProductos.length - 1 || isNaN(indiceModificar)) {
+    mostrarMensaje("Indice no válido")
+    return
+  }
+
+  nombre = prompt("Ingrese el nuevo nombre del producto: ");
+  categoria = prompt("Ingrese la nueva categoria del producto: ");
+  precio = Number(prompt("Ingrese el nuevo precio del producto: "));
+  cantidad = Number(prompt("Ingrese la nueva cantidad del producto: "));
+  marca = prompt("Ingrese la nueva marca del producto: ");
+
+  if (!isFinite(precio + cantidad)) {
+    mostrarMensaje("La cantidad y el precio deben ser númericos");
+    return;
+  }
+
+  listaDeProductos[indiceModificar]["nombre"] = nombre;
+  listaDeProductos[indiceModificar]["categoria"] = categoria;
+  listaDeProductos[indiceModificar]["precio"] = precio;
+  listaDeProductos[indiceModificar]["cantidad"] = cantidad;
+  listaDeProductos[indiceModificar]["marca"] = marca;
+
+  mostrarMensaje("El producto fue modificado correctamente.")
 }
 
 function agregarProducto() {
@@ -137,9 +199,8 @@ function listarProductos() {
     });
 
     listaString += `
-    ${
-      index + 1
-    }. --Nombre: ${nombre} Precio: ${precioFormat} Cantidad: ${cantidad} Marca: ${marca} Categoria: ${categoria}
+    ${index + 1
+      }. --Nombre: ${nombre} Precio: ${precioFormat} Cantidad: ${cantidad} Marca: ${marca} Categoria: ${categoria}
     
     `;
   });
