@@ -39,9 +39,9 @@ function main() {
         break;
       case "4":
         buscarNombre()
-
         break;
       case "5":
+        filtrarPorPrecio()
         break;
       case "6":
         listarProductos();
@@ -55,11 +55,49 @@ function main() {
   } while (controladorWhile);
 }
 
+function filtrarPorPrecio() {
+  const inicio = Number(prompt("Ingrese el valor minimo"));
+  const final = Number(prompt("Ingrese el valor final"));
+
+  if (!isFinite(inicio + final)) {
+    mostrarMensaje("Rangos no válidos")
+    return;
+  }
+
+  let coincidencias = listaDeProductos.filter(producto => producto.precio >= inicio && producto.precio <= final);
+
+  if (coincidencias.length < 0) {
+    mostrarMensaje("No hay productos en este rango de precios")
+    return
+  }
+
+  let listarCoincidencia = ""
+
+  coincidencias.forEach((producto, index) => {
+    const { nombre, precio, cantidad, marca, categoria } = producto;
+
+    //Format unit cost
+    const precioFormat = precio.toLocaleString("en-US", {
+      currency: "USD",
+      style: "currency",
+    });
+
+    listarCoincidencia += `
+    ${index + 1
+      }. --Nombre: ${nombre} Precio: ${precioFormat} Cantidad: ${cantidad} Marca: ${marca} Categoria: ${categoria}
+    
+    `;
+  });
+  mostrarMensaje(listarCoincidencia)
+
+}
+
+
 function buscarNombre() {
   listarProductos();
   let nombreProducto = prompt("Ingresa el nombre del producto");
 
-  const coincidencias = listaDeProductos.filter((producto) => producto.nombre.toLowerCase() === nombreProducto.toLowerCase());
+  const coincidencias = listaDeProductos.filter((producto) => producto.nombre.toLowerCase().includes(nombreProducto.toLowerCase()));
 
   let listarCoincidencia = "";
 
