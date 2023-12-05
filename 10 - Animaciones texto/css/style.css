@@ -23,3 +23,22 @@ body {
   text-shadow: 1px 1px 2px #0f0;
   text-transform: uppercase;
 }
+
+.text {
+  position: relative;
+  font-size: 52px;
+  letter-spacing: 3px;
+  cursor: default;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.text span {
+  color: #555;
+  transition: 0.25s;
+}
+
+.text:hover span {
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0, 0 0 15px, 0 0 30px #0f0;
+}
