@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Mountains of Christmas", serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(#a2000a, #cf0000);
+}
+
+.contenedor {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.contenedor::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  z-index: 1;
+  bottom: 0;
+  background: url(../img/tree.png);
+}
