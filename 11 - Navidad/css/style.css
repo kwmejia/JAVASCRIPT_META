@@ -65,6 +65,8 @@ body {
   background: #fff;
   margin: 0 1vw;
   box-shadow: -100px 20px 5px #fff, 100px 20px 10px #fff;
+  animation: animacionNieve 15s linear infinite;
+  animation-duration: calc(75s / var(--i));
 }
 
 .contenedor .snow span:nth-child(even) {
@@ -72,6 +74,14 @@ body {
   height: 10px;
 }
 
+@keyframes animacionNieve {
+  0% {
+    transform: translateY(-10vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
 @keyframes animacionSanta {
   0% {
     transform: translateY(-25px);
