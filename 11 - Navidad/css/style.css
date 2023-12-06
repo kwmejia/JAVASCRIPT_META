@@ -30,3 +30,56 @@ body {
   bottom: 0;
   background: url(../img/tree.png);
 }
+
+.contenedor .circulo {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+.contenedor .circulo::before {
+  content: "";
+  position: absolute;
+  background: url(../img/santa.png) no-repeat;
+  background-position: center;
+  background-size: 600px;
+  inset: -200px;
+  animation: animacionSanta 5s ease-in-out infinite;
+}
+
+.contenedor .snow {
+  position: relative;
+  display: flex;
+}
+
+.contenedor .snow span {
+  position: relative;
+  min-width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fff;
+  margin: 0 1vw;
+  box-shadow: -100px 20px 5px #fff, 100px 20px 10px #fff;
+}
+
+.contenedor .snow span:nth-child(even) {
+  min-width: 10px;
+  height: 10px;
+}
+
+@keyframes animacionSanta {
+  0% {
+    transform: translateY(-25px);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(-25px);
+  }
+}
