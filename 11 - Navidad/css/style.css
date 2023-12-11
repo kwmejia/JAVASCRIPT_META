@@ -12,6 +12,7 @@ body {
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(#a2000a, #cf0000);
+  cursor: url(../img/cursor.png), default;
 }
 
 .contenedor {

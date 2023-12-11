@@ -1,4 +1,8 @@
 const snowContainer = document.querySelector(".snow");
+const audioNavidad = document.querySelector("#musica_navidad");
+
+audioNavidad.play()
+
 
 snowContainer.innerHTML = "";
 
