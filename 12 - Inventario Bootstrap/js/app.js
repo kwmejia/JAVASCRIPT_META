@@ -1,6 +1,8 @@
 /* Selectores */
 const tbody = document.querySelector("#tbody_table");
 const btnAgregar = document.querySelector("#btn-agregar");
+const btnOpenDrawer = document.querySelector("#btnOpenDrawer");
+const tituloDrawer = document.querySelector("#offcanvasNavbarLabel");
 
 /**Eventos */
 btnAgregar.addEventListener("click", (event) => {
@@ -8,6 +10,16 @@ btnAgregar.addEventListener("click", (event) => {
     event.preventDefault();
     agregarProducto();
 });
+
+tbody.addEventListener("click", (event) => {
+    /**Validamos que al elemento que se dio clic sea el botón actualizar */
+    if (event.target.classList.contains("edit-product")) {
+        /**Obtenemos el atributo data-id, que contiene el id del producto */
+        const id = event.target.getAttribute("data-id");
+        /**Validamos que si exista un id, si existe llamamos a la función editar */
+        if (id) cargarDrawer(id)
+    }
+})
 
 /*Lista para guardar todos los productos */
 const listaProductos = [
@@ -17,7 +29,7 @@ const listaProductos = [
         precio: 5.0,
         cantidad: 10,
         imagen: "https://www.lavanguardia.com/files/og_thumbnail/files/fp/uploads/2020/09/09/5f58b1bb6d322.r_d.627-418-0.jpeg",
-        categoria: "Carbohidrato"
+        categoria: "carbohidrato"
     }
 ];
 
@@ -40,13 +52,15 @@ function mostrarProductos() {
             currency: "USD"
         });
 
+        const imgDefault = "https://cdn-icons-png.flaticon.com/512/2771/2771406.png"
+
         /**Modificar el HTML del tbody */
         tbody.innerHTML += `
             <tr>
                 <td>${index + 1}</td>
                 <td>
                     <img 
-                        src="${imagen}" 
+                        src="${imagen || imgDefault}" 
                         alt="Imagen producto"
                         width="50px"
                         height="50px"
@@ -63,14 +77,14 @@ function mostrarProductos() {
                     class="btn btn-primary edit-product"
                     data-id="${id}"
                 >
-                    <i class='bx bxs-edit'></i>
+                    <i class="bx bxs-edit" style="pointer-events: none"></i>
                 </button>
 
                 <button
                     class="btn btn-danger delete-product"
                     data-id="${id}"
                 >
-                    <i class='bx bxs-trash' ></i>
+                    <i class='bx bxs-trash' style="pointer-events: none" ></i>
                 </button>
                 
                 </td>
@@ -82,6 +96,12 @@ function mostrarProductos() {
 
 /*  Función para agregar un producto */
 function agregarProducto() {
+    /**Modificamos el texto de botón */
+    btnAgregar.textContent = "Agregar producto";
+
+    /**Modificamos el titulo del drawer */
+    tituloDrawer.textContent = "Agregar producto";
+
     /*Selectores los inputs y al mismo tiempo acceder al valor */
     const nombreText = document.querySelector("#nombre_producto").value;
     const cantidadText = document.querySelector("#cantidad").value;
@@ -120,5 +140,34 @@ function agregarProducto() {
     mostrarProductos();
 }
 
+
+/**
+ * Función para editar un producto
+ */
+function cargarDrawer(id) {
+    /**Buscar el producto que tiene el id proporcionado en los parametros */
+    const producto = listaProductos.find(product => product.id == id);
+
+    /*Selectores los inputs y al mismo tiempo acceder al valor */
+    document.querySelector("#nombre_producto").value = producto.nombre;
+    document.querySelector("#cantidad").value = producto.precio;
+    document.querySelector("#precio").value = producto.cantidad;
+    document.querySelector("#imagen").value = producto.imagen;
+    document.querySelector("#categoria").value = producto.categoria;
+
+    /**Hacemos un evento click al botón que abre el drawe */
+    btnOpenDrawer.click();
+
+    /**Modificamos el texto de botón */
+    btnAgregar.textContent = "Editar producto";
+
+    /**Modificamos el titulo del drawer */
+    tituloDrawer.textContent = "Editar producto";
+
+    console.log(producto);
+}
+
+
 mostrarProductos();
+
 
