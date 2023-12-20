@@ -89,6 +89,7 @@ function pintarProductosEnCarrito() {
         tdImage.appendChild(img);
         tr.appendChild(tdImage);
 
+
         /**Columna nombre */
         const tdName = document.createElement("td")
         tdName.textContent = producto.nombre;
