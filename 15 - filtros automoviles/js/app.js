@@ -1,6 +1,13 @@
 /**Selectores */
-
 const contenedor = document.querySelector(".container-cards");
+const marca = document.querySelector("#marca");
+const year = document.querySelector("#year");
+const minimo = document.querySelector("#minimo");
+const maximo = document.querySelector("#maximo");
+const puertas = document.querySelector("#puertas");
+const transmision = document.querySelector("#transmision");
+const color = document.querySelector("#color");
+
 
 /**Eventos */
 document.addEventListener("DOMContentLoaded", () => {
@@ -9,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /**Funcion encargada para imprimir los autos en pantalla */
 function mostrarAutos(autos) {
     //Limpiamos el HTML por si habia elementos ya creados
+    // contenedor.innerHTML = ""
     limpiarHTML()
     //Recorremos la lista de autos
     autos.forEach(auto => {
@@ -32,7 +40,9 @@ function mostrarAutos(autos) {
 }
 
 function limpiarHTML() {
+    //Si el contenedor tiene un primer hijo
     while (contenedor.firstChild) {
+        //Entonces lo elimina y continua validando
         contenedor.removeChild(contenedor.firstChild)
     }
 }
