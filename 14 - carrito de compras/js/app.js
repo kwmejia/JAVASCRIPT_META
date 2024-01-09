@@ -2,7 +2,7 @@
 const contenedorProductos = document.querySelector("#lista-productos");
 const tbody = document.querySelector("#lista-carrito tbody")
 const btnVaciarCarrito = document.querySelector("#vaciar-carrito");
-
+const btnToggleMode = document.querySelector("#btnToggleMode")
 /**Creo la lista para guardar los items que estarán dentro del carrito de compras */
 let listaCarrito = [];
 
@@ -11,6 +11,10 @@ btnVaciarCarrito.addEventListener("click", (event) => {
     event.preventDefault();
     listaCarrito = []
     limpiarCarrito();
+})
+
+btnToggleMode.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode")
 })
 
 
