@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Carrito</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
+  <body>
+    <header id="header" class="header">
+      <div class="container">
+        <div class="row">
+          <div class="four columns">
+            <img
+              src="https://riwi.io/wp-content/uploads/2023/07/Fondo-claro-logo.png"
+              id="logo"
+              height="50"
+            />
+          </div>
+
+          <button id="btnToggleMode">Cambiar Modo</button>
+          <div class="two columns u-pull-right">
+            <ul>
+              <li class="submenu">
+                <img src="img/cart.png" id="img-carrito" />
+                <div id="carrito">
+                  <table id="lista-carrito" class="u-full-width">
+                    <thead>
+                      <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+
+                  <a href="#" id="vaciar-carrito" class="button u-full-width"
+                    >Vaciar Carrito</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="lista-productos" class="container">
+      <h1 id="encabezado" class="encabezado">Productos</h1>
+      <div class="row">
+        <div class="four columns">
+          <div class="card">
+            <img
+              src="https://static.zara.net/photos///2023/I/0/2/p/0108/310/800/2/w/172/0108310800_6_1_1.jpg?ts=1692269630050"
+              class="imagen-curso u-full-width"
+            />
+            <div class="info-card">
+              <h4>PANTALÓN CARGO SLIM FIT</h4>
+              <p>Zara</p>
+              <img src="img/estrellas.png" />
+              <p class="precio">$200 <span class="u-pull-right">$152</span></p>
+              <a
+                href="#"
+                class="u-full-width button input agregar-carrito"
+                data-id="1"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img
+              src="https://static.zara.net/photos///2023/I/0/2/p/6786/320/800/2/w/239/6786320800_6_1_1.jpg?ts=1685370868369"
+              class="imagen-curso u-full-width"
+            />
+            <div class="info-card">
+              <h4>PANTALÓN CHINO ALGODÓN</h4>
+              <p>Zara</p>
+              <img src="img/estrellas.png" />
+              <p class="precio">$200 <span class="u-pull-right">$132</span></p>
+              <a
+                href="#"
+                class="u-full-width button input agregar-carrito"
+                data-id="2"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img
+              src="https://static.zara.net/photos///2023/I/0/2/p/6861/451/802/2/w/156/6861451802_6_1_1.jpg?ts=1689085206146"
+              class="imagen-curso u-full-width"
+            />
+            <div class="info-card">
+              <h4>PANTALON ESTRUCTURAL VERTICAL</h4>
+              <p>Zara</p>
+              <img src="img/estrellas.png" />
+              <p class="precio">$200 <span class="u-pull-right">$152</span></p>
+              <a
+                href="#"
+                class="u-full-width button input agregar-carrito"
+                data-id="3"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+      </div>
+      <!--.row-->
+      <div class="row">
+        <div class="four columns">
+          <div class="card">
+            <img
+              src="https://static.zara.net/photos///2023/V/0/2/p/0108/401/707/2/w/156/0108401707_6_1_1.jpg?ts=1675696045773"
+              class="imagen-curso u-full-width"
+            />
+            <div class="info-card">
+              <h4>PANTALÓN CINTURA JOGGER EASY CARE</h4>
+              <p>Zara</p>
+              <img src="img/estrellas.png" />
+              <p class="precio">$200 <span class="u-pull-right">$499</span></p>
+              <a
+                href="#"
+                class="u-full-width button input agregar-carrito"
+                data-id="4"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img
+              src="https://static.zara.net/photos///2023/I/0/2/p/6917/337/401/2/w/156/6917337401_6_1_1.jpg?ts=1698684693272"
+              class="imagen-curso u-full-width"
+            />
+            <div class="info-card">
+              <h4>PANTALÓN CHINO SLIM FIT</h4>
+              <p>Zara</p>
+              <img src="img/estrellas.png" />
+              <p class="precio">$200 <span class="u-pull-right">$299</span></p>
+              <a
+                href="#"
+                class="u-full-width button input agregar-carrito"
+                data-id="5"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img
+              src="https://static.zara.net/photos///2023/I/0/2/p/5520/340/707/2/w/294/5520340707_6_1_1.jpg?ts=1690811174619"
+              class="imagen-curso u-full-width"
+            />
+            <div class="info-card">
+              <h4>PANTALÓN CINTURA JOGGER EASY CARE</h4>
+              <p>Juan Pedro</p>
+              <img src="img/estrellas.png" />
+              <p class="precio">$200 <span class="u-pull-right">$253</span></p>
+              <a
+                href="#"
+                class="u-full-width button input agregar-carrito"
+                data-id="6"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+      </div>
+      <!--.row-->
+      <div class="row">
+        <div class="four columns">
+          <div class="card">
+            <img
+              src="https://static.zara.net/photos///2023/I/0/2/p/8281/344/505/2/w/156/8281344505_6_1_1.jpg?ts=1693924565491"
+              class="imagen-curso u-full-width"
+            />
+            <div class="info-card">
+              <h4>PANTALÓN ALGODÓN PLIEGUES</h4>
+              <p>Juan Pedro</p>
+              <img src="img/estrellas.png" />
+              <p class="precio">$200 <span class="u-pull-right">$152</span></p>
+              <a
+                href="#"
+                class="u-full-width button input agregar-carrito"
+                data-id="7"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img
+              src="https://static.zara.net/photos///2023/I/0/2/p/7545/371/400/2/w/306/7545371400_2_1_1.jpg?ts=1702459731961"
+              class="imagen-curso u-full-width"
+            />
+            <div class="info-card">
+              <h4>CAMISA OXFORD</h4>
+              <p>Zara</p>
+              <img src="img/estrellas.png" />
+              <p class="precio">$200 <span class="u-pull-right">$235</span></p>
+              <a
+                href="#"
+                class="u-full-width button input agregar-carrito"
+                data-id="8"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img
+              src="https://static.zara.net/photos///2023/I/0/2/p/4344/333/307/2/w/306/4344333307_2_1_1.jpg?ts=1702459733056"
+              class="imagen-curso u-full-width"
+            />
+            <div class="info-card">
+              <h4>Camisa algodon</h4>
+              <p>Camisas hombre</p>
+              <img src="img/estrellas.png" />
+              <p class="precio">$200 <span class="u-pull-right">$210</span></p>
+              <a
+                href="#"
+                class="u-full-width button input agregar-carrito"
+                data-id="9"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+      </div>
+      <!--.row-->
+      <div class="row">
+        <div class="four columns">
+          <div class="card">
+            <img
+              src="https://static.zara.net/photos///2023/I/0/2/p/6529/400/727/2/w/306/6529400727_2_1_1.jpg?ts=1694180150877"
+              class="imagen-curso u-full-width"
+            />
+            <div class="info-card">
+              <h4>Camisa Moderna</h4>
+              <p>Camisas Hombre</p>
+              <img src="img/estrellas.png" />
+              <p class="precio">$200 <span class="u-pull-right">$300</span></p>
+              <a
+                href="#"
+                class="u-full-width button input agregar-carrito"
+                data-id="10"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img
+              src="https://static.zara.net/photos///2023/I/0/2/p/5738/400/500/2/w/306/5738400500_2_1_1.jpg?ts=1690360447135"
+              class="imagen-curso u-full-width"
+            />
+            <div class="info-card">
+              <h4>Camisa de playa</h4>
+              <p>Camisas Hombre</p>
+              <img src="img/estrellas.png" />
+              <p class="precio">$200 <span class="u-pull-right">$200</span></p>
+              <a
+                href="#"
+                class="u-full-width button input agregar-carrito"
+                data-id="11"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+        <div class="four columns">
+          <div class="card">
+            <img
+              src="https://static.zara.net/photos///2023/I/0/2/p/5679/186/064/2/w/510/5679186064_2_1_1.jpg?ts=1696577073205"
+              class="imagen-curso u-full-width"
+            />
+            <div class="info-card">
+              <h4>100 Recetas de Comida Natural</h4>
+              <p>Camisas Hombre</p>
+              <img src="img/estrellas.png" />
+              <p class="precio">$200 <span class="u-pull-right">$15</span></p>
+              <a
+                href="#"
+                class="u-full-width button input agregar-carrito"
+                data-id="12"
+                >Agregar Al Carrito</a
+              >
+            </div>
+          </div>
+          <!--.card-->
+        </div>
+      </div>
+      <!--.row-->
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
