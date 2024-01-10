@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Riwi Eco</title>
+  </head>
+
+  <body>
+    <div>
+      <select
+        class="form-select"
+        id="select_floor"
+        aria-label="Default select example"
+      >
+        <option value="3" selected>Piso 3</option>
+        <option value="4">Piso 4</option>
+        <option value="5">Piso 5</option>
+      </select>
+
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        id="btnOpenModal"
+      >
+        Launch demo modal
+      </button>
+
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Depositar Basura
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3"></div>
+                <div class="mb-3">
+                  <label for="cantidad" class="form-label"
+                    >Número de basuras a ingresar</label
+                  >
+                  <input type="number" class="form-control" id="cantidad" />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                id="btnCloseModal"
+              >
+                Close
+              </button>
+              <button type="button" id="btnSubmit" class="btn btn-primary">
+                Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="container_rubbish">
+        <div class="bowl" id="aprovechables" type-bowl="aprovechables">
+          <div class="body_top">
+            <span class="mt-1">0/500</span>
+          </div>
+          <div class="body_bowl">
+            <span class="title_bowl"
+              >Residuos <br />
+              aprovechables</span
+            >
+            <span class="item">Plástico</span>
+            <span class="item">Cartón</span>
+            <span class="item">Vidrio</span>
+            <span class="item">Papel</span>
+            <span class="item">Metales</span>
+            <img
+              src="https://cdn.pixabay.com/photo/2013/07/13/11/45/conservation-158615_960_720.png"
+              class="my-1"
+              width="40px"
+            />
+          </div>
+          <span class="wheel_left"></span>
+          <span class="wheel_right"></span>
+          <span></span>
+        </div>
+
+        <div class="bowl" id="organicos" type-bowl="organicos">
+          <div class="body_top">
+            <span class="mt-1 text-white">0/500</span>
+          </div>
+          <div class="body_bowl">
+            <span class="title_bowl"
+              >Residuos <br />
+              orgánicos <br />
+              aprovechables</span
+            >
+            <span class="item mt-2">Restos de comida</span>
+            <span class="item mt-2"
+              >Desechos <br />
+              agricolas</span
+            >
+            <img
+              src="https://cdn.pixabay.com/photo/2013/07/13/11/45/conservation-158615_960_720.png"
+              class="my-1"
+              width="40px"
+            />
+          </div>
+          <span class="wheel_left"></span>
+          <span class="wheel_right"></span>
+        </div>
+
+        <div class="bowl" id="no_aprovechables" type-bowl="no_aprovechables">
+          <div class="body_top">
+            <span class="mt-1 text-white">0/500</span>
+          </div>
+          <div class="body_bowl">
+            <span class="title_bowl"
+              >Residuos no<br />
+              aprovechables</span
+            >
+            <span class="item mt-2">Pepel higiénico</span>
+            <span class="item mt-2">Servilletas</span>
+            <span class="item mt-2 text-center"
+              >Papeles <br />
+              metalizados</span
+            >
+            <img
+              src="https://cdn.pixabay.com/photo/2013/07/13/11/45/conservation-158615_960_720.png"
+              class="my-1"
+              width="40px"
+            />
+          </div>
+          <span class="wheel_left"></span>
+          <span class="wheel_right"></span>
+        </div>
+      </section>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
