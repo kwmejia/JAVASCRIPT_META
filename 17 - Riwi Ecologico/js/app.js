@@ -29,6 +29,15 @@ const btnSubmit = document.getElementById("btnSubmit");
 
 
 //Eventos o escuchadores
+document.addEventListener("DOMContentLoaded", function () {
+    //1.LLamar a la función que pinta o que lista los numeros en cada caneca
+    pintarPuntoEcologico()
+})
+
+piso.addEventListener("input", function () {
+    pintarPuntoEcologico()
+})
+
 
 /**Recorro toda mi lista de nodos (Etiqueta HTML) */
 canecas.forEach(caneca => {
@@ -62,5 +71,17 @@ btnSubmit.addEventListener("click", function () {
         }
     })
 
+    pintarPuntoEcologico()
+
     console.log(pisosInicial)
 })
+
+
+//Funciones
+function pintarPuntoEcologico() {
+
+    //1.Recorrer la lista de pisoInicial 
+
+    //1.1 Preguntar o verificar el piso que el usuario desea ver
+    //1.2 Seleccionamos cada uno de los contadores y asignar su valor
+} 
