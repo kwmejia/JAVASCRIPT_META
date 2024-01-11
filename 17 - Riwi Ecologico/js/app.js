@@ -1,5 +1,5 @@
 //Variables globales
-const pisosInicial = [
+let pisosInicial = [
     {
         piso: "3",
         no_aprovechables: 0,
@@ -30,6 +30,11 @@ const btnSubmit = document.getElementById("btnSubmit");
 
 //Eventos o escuchadores
 document.addEventListener("DOMContentLoaded", function () {
+
+    const puntosEcoCache = localStorage.getItem("puntosEcologicos")
+    if (puntosEcoCache) {
+        pisosInicial = JSON.parse(puntosEcoCache)
+    }
     //1.LLamar a la función que pinta o que lista los numeros en cada caneca
     pintarPuntoEcologico()
 })
@@ -81,7 +86,43 @@ btnSubmit.addEventListener("click", function () {
 function pintarPuntoEcologico() {
 
     //1.Recorrer la lista de pisoInicial 
+    pisosInicial.forEach(puntoEco => {
 
-    //1.1 Preguntar o verificar el piso que el usuario desea ver
-    //1.2 Seleccionamos cada uno de los contadores y asignar su valor
+        //1.1 Preguntar o verificar el piso que el usuario desea ver
+        if (puntoEco.piso == piso.value) {
+            //1.2 Seleccionamos cada uno de los contadores y asignar su valor
+            const contadorOrganicos = document.querySelector("#organicos .body_top span")
+            const contadorNoAprovechables = document.querySelector("#no_aprovechables .body_top span")
+            const contadorAprovechables = document.querySelector("#aprovechables .body_top span")
+
+            contadorOrganicos.textContent = `${puntoEco.organicos}/500`;
+            contadorNoAprovechables.textContent = `${puntoEco.no_aprovechables}/500`;
+            contadorAprovechables.textContent = `${puntoEco.aprovechables}/500`;
+
+            //Sacar el promedio
+            const suma = puntoEco.organicos + puntoEco.no_aprovechables + puntoEco.aprovechables;
+
+            const porcentaje = ((suma) / 1500) * 100;
+            const estadoPiso = document.querySelector("#estado_piso")
+
+
+            if (porcentaje < 20) {
+                estadoPiso.textContent = `Estado del piso ${piso.value}: No amigo del ambiente.`
+                document.body.style.background = "#950101";
+            }
+
+            if (porcentaje >= 20 && porcentaje < 50) {
+                estadoPiso.textContent = `Estado del piso ${piso.value}: Normal.`;
+                document.body.style.background = "#fc4b08"
+            }
+
+            if (porcentaje >= 50) {
+                estadoPiso.textContent = `Estado del piso ${piso.value}: Amigable con el medio ambiente.`;
+
+                document.body.style.background = "#6fd513"
+            }
+        }
+    })
+
+    localStorage.setItem("puntosEcologicos", JSON.stringify(pisosInicial))
 } 

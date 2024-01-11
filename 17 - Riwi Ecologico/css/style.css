@@ -28,6 +28,12 @@ select {
   display: none;
 }
 
+#estado_piso {
+  text-align: center;
+  color: #fafafa;
+  text-shadow: 2px 2px 1px #000;
+}
+
 /* Contenedores de basura  */
 
 .container_rubbish {
