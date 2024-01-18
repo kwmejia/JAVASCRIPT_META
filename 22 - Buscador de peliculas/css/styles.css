@@ -59,3 +59,8 @@ body {
   font-size: 12px;
   border-radius: 2px;
 }
+
+/*CARDS*/
+.cards-container {
+  margin: 10px 5%;
+}
