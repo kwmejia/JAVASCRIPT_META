@@ -17,7 +17,12 @@ userForm.addEventListener("submit", (event) => {
     //Quitar acciones por defecto
     event.preventDefault();
     //Llamamos la funcíon que se encarga de agregar al usuario
-    addUser()
+
+    if (idUser.value) {
+        updateUser()
+    } else {
+        addUser()
+    }
 })
 
 //Funcion para agregar un usuario
@@ -50,10 +55,73 @@ async function addUser() {
 
 }
 
-
+//Obtener los usuarios
 function getUsers() {
     fetch(urlBase)
         .then(respuesta => respuesta.json())
-        .then(data => console.log(data))
+        .then(data => renderUsers(data))
         .catch(error => console.error(error))
+}
+
+//Función para monstrar los usuarios en el HTML
+function renderUsers(users) {
+    users.forEach(user => {
+        //TD
+        const tdName = document.createElement("td")
+        const tdAge = document.createElement("td")
+        const tdActions = document.createElement("td")
+        //Buttons
+        const btnUpdate = document.createElement("button")
+        const btnDelete = document.createElement("button")
+
+        //tr
+        const tr = document.createElement("tr")
+
+        btnDelete.classList.add("btn", "btn-danger", "mx-2")
+        btnUpdate.classList.add("btn", "btn-primary", "mx-2")
+
+        btnDelete.textContent = "Delete";
+        btnUpdate.textContent = "Edit";
+
+
+        btnDelete.addEventListener("click", () => {
+            console.log("Eliminando")
+            deleteUser(user.id)
+        })
+
+        btnUpdate.addEventListener("click", () => {
+            console.log("Actualizando")
+            loadingInfo(user)
+        })
+
+        tdName.textContent = user.name;
+        tdAge.textContent = user.age;
+
+
+        //Appendchilds
+
+        tdActions.appendChild(btnDelete)
+        tdActions.appendChild(btnUpdate)
+
+
+        tr.appendChild(tdName)
+        tr.appendChild(tdAge)
+        tr.appendChild(tdActions)
+
+        tbody.appendChild(tr)
+    });
+}
+
+async function deleteUser(id) {
+    console.log(`${urlBase}/${id}`)
+    await fetch(`${urlBase}/${id}`, {
+        method: "DELETE"
+    })
+
+}
+
+function loadingInfo(user) {
+    userAge.value = user.age;
+    userName.value = user.name;
+    idUser.value = user.id;
 }
