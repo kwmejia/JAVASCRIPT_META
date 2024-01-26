@@ -1,3 +1,14 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "6ae7",
+      "email": "kevin@gmail.com",
+      "password": "Qwerty123!"
+    },
+    {
+      "id": "1254",
+      "email": "kevin9@gmail.com",
+      "password": "Qwerty1!"
+    }
+  ]
 }
