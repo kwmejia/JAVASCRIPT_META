@@ -21,7 +21,7 @@ userForm.addEventListener("submit", (event) => {
     if (idUser.value) {
         updateUser()
     } else {
-        addUser()
+        // addUser()
     }
 })
 
@@ -53,6 +53,12 @@ async function addUser() {
         body: JSON.stringify(newUser)
     })
 
+    Swal.fire({
+        title: 'Error!',
+        text: 'Do you want to continue',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+    })
 }
 
 //Obtener los usuarios
