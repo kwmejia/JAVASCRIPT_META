@@ -16,13 +16,12 @@ function createUser() {
 }
 
 
-function validateData() {
+function validatePassword() {
 
-    const regexp_password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}/;
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+
 
     //Validar que las dos contraseñas sean iguales, tengan una minima longitud de 6 caracteres y tengan un caracter especial
-    if (userPassword.value === passwordConfirmation.value && userPassword.length >= 6) {
-
-    }
+    return userPassword.value === passwordConfirmation.value && regex.test(userPassword.value)
 }
 
