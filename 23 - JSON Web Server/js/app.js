@@ -21,7 +21,7 @@ userForm.addEventListener("submit", (event) => {
     if (idUser.value) {
         updateUser()
     } else {
-        // addUser()
+        addUser()
     }
 })
 
