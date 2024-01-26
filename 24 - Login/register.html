@@ -12,8 +12,8 @@
     />
     <title>Document</title>
   </head>
-  <body>
-    <form>
+  <body class="d-flex justify-content-around align-items-center vh-100">
+    <form class="border p-5" id="formRegister">
       <div class="mb-3">
         <label for="userEmail" class="form-label">Email address</label>
         <input
@@ -32,13 +32,14 @@
       </div>
 
       <div class="mb-3">
-        <label for="passwordConfirmation" class="form-label">Password</label>
+        <label for="passwordConfirmation" class="form-label"
+          >Password Confirmation</label
+        >
         <input type="password" class="form-control" id="passwordConfirmation" />
       </div>
 
       <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <a href=".">Iniciar Sesión</a>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
