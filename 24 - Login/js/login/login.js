@@ -17,4 +17,22 @@ async function login() {
     const data = await response.json()
 
     console.log(data)
+
+    if (!data.length) {
+        console.log("Email no registrado")
+        return
+    }
+
+
+    if (data[0].password === userPassword.value) {
+        //Autenticar
+
+        localStorage.setItem("isAuthenticated", "true")
+        //window es un objeto global que nos permite acceder a la información la ventana
+        window.location.href = "administrator.html"
+
+    } else {
+        console.log("Contraseña incorrecta.")
+    }
+
 }
