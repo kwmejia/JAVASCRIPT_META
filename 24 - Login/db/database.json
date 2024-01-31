@@ -16,7 +16,18 @@
       "id": "e245",
       "name": "Marcos Agudelo",
       "age": "43"
+    },
+    {
+      "id": "835d",
+      "name": "Auto2"
     }
   ],
-  "books": []
+  "books": [
+    {
+      "id": "0128",
+      "name": "EL olvido que seremos",
+      "date": "2024-01-11",
+      "authorId": "e245"
+    }
+  ]
 }
