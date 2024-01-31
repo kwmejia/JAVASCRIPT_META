@@ -20,6 +20,10 @@
     {
       "id": "835d",
       "name": "Auto2"
+    },
+    {
+      "id": "ca19",
+      "name": "Gabriel "
     }
   ],
   "books": [
@@ -28,6 +32,12 @@
       "name": "EL olvido que seremos",
       "date": "2024-01-11",
       "authorId": "e245"
+    },
+    {
+      "id": "4b18",
+      "name": "Nuevo libro",
+      "date": "2024-01-18",
+      "authorId": "ca19"
     }
   ]
 }

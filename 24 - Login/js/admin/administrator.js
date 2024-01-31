@@ -6,6 +6,8 @@ const formBooks = document.getElementById("formBooks")
 const nameBook = document.getElementById("nameBook")
 const dateBook = document.getElementById("dateBook")
 const authorBook = document.getElementById("authorBook")
+const listBooks = document.getElementById("listBooks")
+
 const URLAuthors = "http://localhost:3000/authors"
 const URLBooks = "http://localhost:3000/books"
 //Eventos
@@ -31,6 +33,11 @@ async function getBooks() {
     const response = await fetch(`${URLBooks}?_embed=author`)
     const data = await response.json()
     console.log(data)
+    data.forEach(books => {
+        listBooks.innerHTML += `
+            <li>Name: ${books.name}, Date: ${books.date}, Author: ${books.author.name} </li>
+        `
+    })
 }
 
 function createBook() {
