@@ -11,7 +11,12 @@
       "password": "Qwerty1!"
     }
   ],
-
-  "authors": [],
+  "authors": [
+    {
+      "id": "e245",
+      "name": "Marcos Agudelo",
+      "age": "43"
+    }
+  ],
   "books": []
 }
